@@ -1,0 +1,24 @@
+{
+  "name": "sky-day-counter",
+  "version": "1.0.0",
+  "description": "\"# Learning Redux Sample\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/.bin/babel-node ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lgong2000/Redux.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lgong2000/Redux/issues"
+  },
+  "homepage": "https://github.com/lgong2000/Redux#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}

@@ -1,1 +1,1 @@
-"# Redux" 
+"# Learning Redux Sample"
