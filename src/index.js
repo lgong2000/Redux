@@ -1,32 +1,35 @@
 import C from './constants'
-import { allSkiDays } from './store/reducers'
+import expect from 'expect'
+import { suggestions, fetching } from './store/reducers'
 
-const state = [
-  {
-    "resort": "Kirkwood",
-    "date": "2016-12-15",
-    "powder": true,
-    "backcountry": false
-  },
-  {
-    "resort": "Boreal",
-    "date": "2016-12-16",
-    "powder": false,
-    "backcountry": true
-  }
-]
 
 const action = {
-  type: C.REMOVE_DAY,
-  payload: "2016-12-15"
+  type: C.CHANGE_SUGGESTIONS,
+  payload: ['Heavenly Ski Resort', 'Heavens Sonohara']
 }
 
-const nextState = allSkiDays(state, action)
+const state = {
+  fetching: true,
+  suggestions: []
+}
+
+const expectedState = {
+  fetching: false,
+  suggestions: ['Heavenly Ski Resort', 'Heavens Sonohara']
+}
+
+const actualState = {
+  fetching: fetching(state.fetching, action),
+  suggestions: suggestions(state.suggestions, action)
+}
+
+expect(actualState.suggestions).toEqual(expectedState.suggestions)
+expect(actualState.fetching).toEqual(expectedState.fetching)
 
 console.log(`
 
   initial state: ${JSON.stringify(state)}
   action: ${JSON.stringify(action)}
-  new goal: ${JSON.stringify(nextState)}
+  new goal: ${JSON.stringify(actualState)}
 
   `)
