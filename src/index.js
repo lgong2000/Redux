@@ -1,6 +1,7 @@
 import C from './constants';
 import { allSkiDays, goal } from './initialState.json';
 
+
 console.log(`
 
     Ski Day Counter
