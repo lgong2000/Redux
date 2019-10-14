@@ -59,6 +59,8 @@ export const suggestions = (state=[], action) => {
       return []
     case C.CHANGE_SUGGESTIONS:
       return action.payload
+    case C.CLEAR_SUGGESTIONS:
+      return []
     default:
       return state
   }
