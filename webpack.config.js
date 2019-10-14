@@ -1,9 +1,11 @@
+var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+
 const path = require('path');
 
 module.exports = {
   entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist/assets'),
     filename: "bundle.js",
     publicPath: "assets"
   },
@@ -20,11 +22,31 @@ module.exports = {
         use: {
           loader:'babel-loader',
           options:{
-            presets: ['latest', 'stage-0']
+            presets: ['latest', 'stage-0', 'react']
           }
         }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true
+            }
+          }
+        ]
       }
     ]
-  }
+  },
+  plugins: [
+        new OptimizeCssAssetsPlugin({
+            assetNameRegExp: /\.optimize\.css$/g,
+            cssProcessor: require('cssnano'),
+            cssProcessorOptions: {discardComments: {removeAll: true}},
+            canPrint: true
+        })
+    ]
 
 }

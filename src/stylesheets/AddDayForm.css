@@ -1,0 +1,83 @@
+form.add-day {
+  font-family: Verdana, sans-serif;
+  width: 70%;
+  margin-left: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+  height: calc(100% - 12em);
+  font-size: 1.7em;
+}
+form.add-day > label,
+form.add-day div {
+  margin: 1em 0;
+}
+form.add-day label {
+  font-size: 1.5em;
+  text-shadow: 3px 3px 10px #d3d5e3;
+  height: 10px;
+  font-weight: bold;
+}
+form.add-day input[type=text],
+form.add-day input[type=date] {
+  font-size: 1.5em;
+  padding: 0.25em;
+  border-radius: 0.2em;
+  outline: none;
+  min-height: 36px;
+}
+form.add-day input[type=checkbox] {
+  transform: scale(2);
+  margin: 0;
+  padding: 0;
+  margin-right: 2em;
+}
+form.add-day div > label {
+  position: relative;
+  top: 2px;
+}
+form.add-day .autocomplete {
+  position: relative;
+}
+form.add-day .autocomplete input {
+  width: calc(100% - .75em);
+}
+form.add-day .autocomplete span {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 2em;
+}
+form.add-day .autocomplete .suggestions {
+  position: absolute;
+  top: 2em;
+  left: 0;
+  width: auto;
+  height: auto;
+  max-height: 200px;
+  background-color: white;
+  overflow-y: scroll;
+  z-index: 3;
+}
+form.add-day .autocomplete .suggestions p {
+  padding: 1em;
+  margin: 0;
+}
+form.add-day .autocomplete .suggestions p:hover {
+  background-color: yellow;
+}
+form.add-day .autocomplete .suggestions:empty {
+  display: none;
+}
+form.add-day button {
+  margin: auto;
+  width: 100%;
+  font-size: 2em;
+  background-color: #8a2a2d;
+  font-weight: bold;
+  color: #d3d5e3;
+  padding: 5px;
+}
+
+/*# sourceMappingURL=AddDayForm.css.map */
