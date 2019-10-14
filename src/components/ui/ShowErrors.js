@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import { PropTypes } from 'react'
 import CloseButton from 'react-icons/lib/fa/close'
 import '../../stylesheets/ShowErrors.css'
 

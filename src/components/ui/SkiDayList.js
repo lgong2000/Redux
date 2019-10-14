@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import { PropTypes } from 'react'
 import { Link } from 'react-router'
 import SkiDayRow from './SkiDayRow'
 import Terrain from 'react-icons/lib/md/terrain'

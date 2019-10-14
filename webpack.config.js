@@ -15,38 +15,33 @@ module.exports = {
     port:3000
   },
   module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /(node_modules)/,
-        use: {
-          loader:'babel-loader',
-          options:{
-            presets: ['latest', 'stage-0', 'react']
-          }
-        }
-      },
-      {
-        test: /\.css$/,
-        use: [
-          { loader: 'style-loader' },
+      loaders: [
           {
-            loader: 'css-loader',
-            options: {
-              modules: true
-            }
+              test: /\.js$/,
+              exclude: /(node_modules)/,
+              loader: ['babel'],
+              query: {
+                  presets: ['latest', 'stage-0', 'react']
+              }
+          },
+          {
+              test: /\.json$/,
+              exclude: /(node_modules)/,
+              loader: 'json-loader'
+          },
+          {
+              test: /\.css$/,
+              loader: 'style-loader!css-loader!autoprefixer-loader'
+
           }
-        ]
-      }
-    ]
+      ]
   },
   plugins: [
-        new OptimizeCssAssetsPlugin({
-            assetNameRegExp: /\.optimize\.css$/g,
-            cssProcessor: require('cssnano'),
-            cssProcessorOptions: {discardComments: {removeAll: true}},
-            canPrint: true
-        })
-    ]
-
+      new OptimizeCssAssetsPlugin({
+          assetNameRegExp: /\.optimize\.css$/g,
+          cssProcessor: require('cssnano'),
+          cssProcessorOptions: {discardComments: {removeAll: true}},
+          canPrint: true
+      })
+  ]
 }

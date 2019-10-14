@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import { PropTypes } from 'react'
 import Autocomplete from './Autocomplete'
 import '../../stylesheets/AddDayForm.css'
 
